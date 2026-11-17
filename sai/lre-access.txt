@@ -1,0 +1,158 @@
+Skip to:
+Top Bar
+Sidebar
+Main Content
+
+
+
+Search
+
+Create
+
+Ask Rovo
+
+6
+
+
+
+
+Back to top
+Platform Hub
+Engineering Experience Platform
+T-Time v2.0
+ROVO HUB
+Search by title
+Updated Sep 21
+Amol Vitthal Raut
+
+Share
+
+
+FAQ - LRE/LRC
+
+
+
+By Sandosh Vaidyanathan
+
+T-Mobile Internal
+
+6 min
+
+Listen
+
+13
+
+Add a reaction
+LoadRunner Enterprise (LRE) and LoadRunner Cloud (LRC) Customer FAQ
+Purpose: Customer-facing answers to common questions about LoadRunner Enterprise (LRE), LoadRunner Cloud (LRC), access, test execution, licensing, load generators, and troubleshooting.
+
+LoadRunner Enterprise (LRE) and LoadRunner Cloud (LRC)
+This section summarizes the customer FAQ guidance for T-Mobile’s performance-testing platforms. Use the full LoadRunner FAQ for detailed procedures and product documentation.
+
+When should I use LRE versus LRC?
+LRE: T-Mobile’s internal performance platform. It generates load from the internal Polaris/Titan network and should be used for applications in NPE environments such as PLAB and QLAB, and for production retail and care applications.
+
+LRC: OpenText’s SaaS performance platform. It generates load from Azure Cloud and should be used for large-volume production testing of Digital applications, such as T-Mobile.com.
+
+Important: Avoid large internal LRE tests of approximately 40,000 or more users. Internal load generators use dedicated NAT pools, and port exhaustion can cause the test to fail.
+
+What are LRE and LRC?
+LRE is an enterprise platform for designing, scheduling, executing, monitoring, and analyzing distributed performance tests. It uses virtual users (Vusers), controllers, and load generators to emulate application traffic and collect response-time and resource metrics.
+
+LRC is a cloud-based platform for running performance tests with elastic cloud load generators. It uses VUH (Virtual User Hours) as its consumption-based license metric.
+
+How do I access LRE?
+First-time users should request access through  the company application portal My Apps → Add Apps, Request “LoadRunner “ application from the list. up
+
+Upon approval, use the LRE production portal: https://lre.t-mobile.com/homepage/. The Stage portal is https://lre-stg.t-mobile.com/homepage/. 
+
+Execution permission may require a separate, time-bound request after above steps completion.
+
+How do I access LRC?
+Open the LoadRunner Cloud portal. If access is unavailable, contact lre-admin@t-mobile.com.
+
+How is LRC usage calculated?
+LRC charges VUH based on the number of Vusers and the execution duration. In the load test’s Load Profile, add the scripts, configure the Vuser count and duration, and use the calculation option to review the expected VUH before running. A short script can still consume a minimum of one VUH, so plan workload and duration carefully.
+
+How do I configure load generators?
+In LRC, enable manual cloud load-generator Vuser configuration in Test Settings, edit the Vuser assignment, and use Run preview to validate the Vuser-to-load-generator distribution. In LRE, assign load generators by location or use automatch; if a timeslot is unavailable, select another host or wait for a maintenance window to finish.
+
+What should I know about IP spoofing?
+LRE: Each load generator has a primary IP and three additional VIPs. Enable IP spoofing in the test’s options before execution.
+
+LRC: Each load generator uses 15 IP addresses when IP spoofing is enabled. T-Mobile has a limited pool of dedicated IPs across three zones, so IP spoofing can reduce the number of concurrent tests.
+
+What are common LRE and LRC support steps?
+For access, execution enablement, firewall, or platform issues, open an LRE support request and include the environment, domain, project, user ID, and business impact.
+
+For vendor-related issues, use the OpenText support process and include the test or run ID, timestamp, exact error, reproduction steps, logs, and screenshots.
+
+For connectivity to external applications, verify the required firewall rules and network routes before troubleshooting the script.
+
+If a test is locked in LRE, use the Entity Unlocker utility, authenticate, select the domain and project, and unlock the test.
+
+Why can I sign in to LRE but not see my domain or project?
+Successful sign-in does not always mean that domain and project permissions are available. Confirm that your access request includes the correct domain and project, then provide your NTID, domain, project name, and the date access was requested when contacting support. If teammates can access LRE but cannot see a specific project or option, ask the project administrator to verify their project membership and role.
+
+Why is the Create Test button disabled even though I have LRE access?
+Test authoring access and execution permission can be separate. If Create Test or execution controls are disabled, verify that your account has the required project role and that execution has been enabled for the requested environment. Include the domain, project, NTID, and business impact in the access request.
+
+What should I do after an LRE version upgrade?
+Use the current LRE portal and confirm that your browser session is using the upgraded environment. Revalidate SSO, domain and project visibility, script access, runtime settings, load-generator availability, and execution permissions. If a page is blank or controls are missing, retry in a supported browser or private window and report the affected module, browser version, timestamp, and screenshot.
+
+Why is the Runs page blank or only partially loading?
+After an upgrade or SSO change, a blank Runs page can be related to stale browser data, browser compatibility, permissions, or a service/API loading issue. Sign out and back in, refresh the page, try a private window, and clear cached site data. If the issue remains, provide the project, run ID if available, browser and version, timestamp, and a screenshot.
+
+Why are load generators unavailable or is no controller available?
+Execution requires compatible, connected load generators and an available controller. Check the selected location, timeslot, pool, protocol, and requested capacity. A maintenance window, unavailable host, pool assignment, or capacity limit can prevent execution. Record the test name, project, requested Vuser count, load-generator count, controller selection, and exact message before escalating.
+
+How do I request additional Vusers or load-generator capacity?
+Capacity increases are reviewed against the test profile and available infrastructure. Request the target Vuser count, expected TPS, duration, protocol, environment, project, preferred execution window, and number of load generators. Large internal tests may also be constrained by network ports and NAT capacity, so include the workload model and ramp-up plan.
+
+What causes SSL errors, connection resets, and connection timeouts during execution?
+These errors can indicate a TLS mismatch, certificate problem, firewall or route restriction, proxy configuration, target-side throttling, or unavailable application endpoint. First compare the endpoint and environment with a working run, confirm the target is reachable from the selected load-generator network, and verify the supported TLS settings and certificates. Escalations should include the exact error code, hostname and port, environment, run ID, timestamp, and whether the same request works from VuGen, Postman, or another client.
+
+Why do scripts work locally but fail when run from LRE?
+Local VuGen execution and distributed LRE execution can use different network paths, certificates, proxies, DNS resolution, runtime settings, and load-generator policies. Confirm that every load generator can reach the endpoint, required proxy or firewall rules are in place, certificates are installed where needed, and the script runtime settings are compatible with the LRE version. Include the load-generator names or pool, endpoint, and first failing step.
+
+Why do I see a JavaScript engine or access-violation error?
+For scripts that call JavaScript, verify that the JavaScript engine is enabled in the runtime settings and that the script’s runtime configuration is available after migration. Access violations can also be workload- or resource-related, especially during Vuser initialization. Reproduce with a small workload, capture the failing step and run ID, and compare results across script versions and load-generator configurations before requesting deeper investigation.
+
+Why did a run finish without transaction data or show “Failed Collating Results”?
+A completed run is not necessarily a successfully collated run. If transactions are zero, graphs show no data, or the run reports Failed Collating Results, preserve the run ID and do not delete the run or its logs. Record active Vusers, errors, controller and load-generator details, test duration, and the time the run ended so support can investigate result collection and collation.
+
+How do I request LRE REST API access?
+Request the appropriate API credential type and scope for the intended automation. Specify whether access is read-only or requires write operations, the user or service account, domains and projects, and the use case. After an LRE upgrade, do not assume that older client IDs, secrets, API keys, or base URLs remain valid; ask support to confirm the current endpoint and issue or rotate credentials through the approved process.
+
+What information should I include in an LRE support request?
+Include the LRE environment and URL, NTID or service account, domain and project, test or run ID, script and protocol, execution date and time, Vuser and load-generator counts, controller or pool, exact error text, affected endpoint, troubleshooting already attempted, screenshots or logs, and business impact. Never include API secrets, passwords, or private keys in the ticket.
+
+What should I do if VTS tables are disconnected?
+Stop the dependent execution if it could use incomplete test data, then confirm the VTS connection and table status for the affected project. Capture the project, table names, environment, time of disconnection, and any reconnect error. If multiple tables are disconnected, report them together so the connection or service issue can be assessed as a single incident.
+
+ 
+
+Related content
+
+LRE/LRP/LRC - Gap Analysis
+Twinkle Domadia
+Documentation / Training
+Ramesh Bachala (Deactivated)
+Performance Engineering Q1 2026 BRP
+Jayalakshmi Velchuru
+PE Big Room Planning - Q1 2026
+Jayalakshmi Velchuru
+Performance Engineering Q1 2026 PI Planning
+Jayalakshmi Velchuru
+PERFORMANCE ENGINEERING PLATFORM CUSTOMER FEEDBACK
+Jayalakshmi Velchuru
+
+
+
+
+
+
+Add a comment
+
+Add a reaction
+
