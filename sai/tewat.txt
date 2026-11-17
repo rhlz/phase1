@@ -1,80 +1,136 @@
+Skip to:
+Top Bar
+Sidebar
+Main Content
+
+
+Search
+
+Create
+
+6
+
+
+
+
+t-mobile
+Shared chat preview
+I am currently working on an R&D task to identify…
+Between
+Rovo
+and
+
+Amol Vitthal Raut
+
 I am currently working on an R&D task to identify how to obtain or create production performance-testing users (PerfUsers) for the TIP application at T-Mobile, specifically for the Semantic Layer use case, where load testing will be performed using LoadRunner Enterprise (LRE).
 
-**Background:**
+Background:
 
-- We need a list of production PerfUsers to perform TIP application load testing.
-- Currently, I don't have access to either the LRE Production or Stage portal (Access Denied / Unauthorized).
-- Our team suggested using IDM tools to generate performance-testing users.
-- Anderson Dorvil was identified as the main IDM point of contact for user creation.
-- However, it was mentioned that Anderson's access is limited to test-space users, which may not work for our production use case.
-- The team also shared the Confluence documents "Performance Testing Tools – CustomerInfo Management" and "ADM Account Creation."
-- We need to determine whether existing production PerfUsers can be obtained or whether new dedicated users must be provisioned.
+We need a list of production PerfUsers to perform TIP application load testing.
 
-**Please search all relevant accessible Confluence documentation, including performance engineering guides, IDM documentation, TIP application documentation, Semantic Layer performance-testing records, and CustomerInfo Management guides.**
+Currently, I don't have access to either the LRE Production or Stage portal (Access Denied / Unauthorized).
+
+Our team suggested using IDM tools to generate performance-testing users.
+
+Anderson Dorvil was identified as the main IDM point of contact for user creation.
+
+However, it was mentioned that Anderson's access is limited to test-space users, which may not work for our production use case.
+
+The team also shared the Confluence documents "Performance Testing Tools – CustomerInfo Management" and "ADM Account Creation."
+
+We need to determine whether existing production PerfUsers can be obtained or whether new dedicated users must be provisioned.
+
+Please search all relevant accessible Confluence documentation, including performance engineering guides, IDM documentation, TIP application documentation, Semantic Layer performance-testing records, and CustomerInfo Management guides.
 
 I need detailed answers to the following questions:
 
-**1. Existing PerfUsers**
+1. Existing PerfUsers
 
-- Is there an existing list or pool of production PerfUsers for TIP or Semantic Layer performance testing?
-- Where is this list maintained?
-- Which team owns and manages these users?
-- What is the approved process to request access to this list?
+Is there an existing list or pool of production PerfUsers for TIP or Semantic Layer performance testing?
 
-**2. IDM Utility and User Creation**
+Where is this list maintained?
 
-- What is the IDM utility used for?
-- Can IDM create production performance-testing users, or only test-space/non-production users?
-- Is there an official step-by-step guide for creating users through IDM?
-- If IDM cannot create production PerfUsers, what alternative approved process exists?
+Which team owns and manages these users?
 
-**3. CustomerInfo Management Tool**
+What is the approved process to request access to this list?
 
-- What is the purpose of the "Performance Testing Tools – CustomerInfo Management" tool?
-- Can it generate, retrieve, or manage production PerfUsers?
-- What access permissions are required?
-- What are the exact documented steps to use this tool?
+2. IDM Utility and User Creation
 
-**4. Production User Provisioning**
+What is the IDM utility used for?
 
-- What is the official process for creating dedicated production performance-testing accounts?
-- Which team is responsible: IDM, Performance Engineering, TIP, IAM, or another team?
-- Are there approval requirements, request forms, Jira tickets, or ServiceNow/Compass workflows?
-- Is bulk creation of performance-testing users supported?
+Can IDM create production performance-testing users, or only test-space/non-production users?
 
-**5. ADM Account Requirement**
+Is there an official step-by-step guide for creating users through IDM?
 
-- Is an ADM account required to use IDM, CustomerInfo Management, or other performance-user provisioning tools?
-- Does the ADM account provide any access needed for production PerfUsers?
-- What additional roles or permissions are necessary?
+If IDM cannot create production PerfUsers, what alternative approved process exists?
 
-**6. Previous Performance Testing**
+3. CustomerInfo Management Tool
 
-- Are there previous TIP or Semantic Layer performance tests documenting how PerfUsers were obtained?
-- Which teams or individuals provided the user accounts?
-- Are there scripts, configuration guides, runbooks, or test-data provisioning instructions that can be reused?
+What is the purpose of the "Performance Testing Tools – CustomerInfo Management" tool?
 
-**7. LRE Integration**
+Can it generate, retrieve, or manage production PerfUsers?
 
-- How are PerfUsers supplied to LRE load-testing scripts?
-- Are they maintained in CSV/DAT parameter files, VTS tables, a secure repository, or another system?
-- Can the user list be obtained without direct LRE portal access?
-- What permissions are required to view existing TIP load-testing scripts?
+What access permissions are required?
 
-**8. Recommended Next Steps**
+What are the exact documented steps to use this tool?
+
+4. Production User Provisioning
+
+What is the official process for creating dedicated production performance-testing accounts?
+
+Which team is responsible: IDM, Performance Engineering, TIP, IAM, or another team?
+
+Are there approval requirements, request forms, Jira tickets, or ServiceNow/Compass workflows?
+
+Is bulk creation of performance-testing users supported?
+
+5. ADM Account Requirement
+
+Is an ADM account required to use IDM, CustomerInfo Management, or other performance-user provisioning tools?
+
+Does the ADM account provide any access needed for production PerfUsers?
+
+What additional roles or permissions are necessary?
+
+6. Previous Performance Testing
+
+Are there previous TIP or Semantic Layer performance tests documenting how PerfUsers were obtained?
+
+Which teams or individuals provided the user accounts?
+
+Are there scripts, configuration guides, runbooks, or test-data provisioning instructions that can be reused?
+
+7. LRE Integration
+
+How are PerfUsers supplied to LRE load-testing scripts?
+
+Are they maintained in CSV/DAT parameter files, VTS tables, a secure repository, or another system?
+
+Can the user list be obtained without direct LRE portal access?
+
+What permissions are required to view existing TIP load-testing scripts?
+
+8. Recommended Next Steps
 
 Based on the available documentation, provide a practical step-by-step action plan to obtain the production PerfUsers needed for TIP load testing.
 
 Please identify:
-- The recommended approach.
-- The tools I need to access.
-- The responsible team or point of contact.
-- The relevant access request procedures.
-- The correct sequence of steps to follow.
-- Any known limitations or blockers.
-- What I can investigate immediately without LRE access.
 
-**Important instructions:**
+The recommended approach.
+
+The tools I need to access.
+
+The responsible team or point of contact.
+
+The relevant access request procedures.
+
+The correct sequence of steps to follow.
+
+Any known limitations or blockers.
+
+What I can investigate immediately without LRE access.
+
+Important instructions:
 
 For every finding, provide the exact Confluence page title and source URL.
 
@@ -84,16 +140,343 @@ If documentation does not confirm whether production PerfUsers can be created us
 
 Do not expose actual user credentials, passwords, access tokens, or sensitive production account data.
 
-**Final expected output:**
+Final expected output:
 
 Provide a consolidated R&D report containing:
 
-1. Existing PerfUsers availability and ownership.
-2. IDM and CustomerInfo Management capabilities.
-3. Confirmed production-user creation process, if documented.
-4. Required access and approvals.
-5. Relevant documentation links.
-6. Teams or contacts who can help.
-7. A prioritized action plan to unblock TIP performance testing.
+Existing PerfUsers availability and ownership.
+
+IDM and CustomerInfo Management capabilities.
+
+Confirmed production-user creation process, if documented.
+
+Required access and approvals.
+
+Relevant documentation links.
+
+Teams or contacts who can help.
+
+A prioritized action plan to unblock TIP performance testing.
 
 My ultimate goal is to identify a reliable, approved method to obtain or provision production PerfUsers for TIP load testing using LRE.
+
+R&D report: getting production PerfUsers for TIP / Semantic Layer load testing with LRE
+I couldn't find an approved way to get production PerfUsers in any Confluence or Jira content I can access. There's no documented list of existing PerfUsers for TIP or the Semantic Layer, and no documented process for creating production test accounts. The one IDM tool with official documentation works only in non-production environments. You'll need direct answers from the people who ran the earlier Semantic Layer performance tests and from IAM/IDM.
+
+Two corrections to your starting assumptions:
+
+TIP is the T-Intelligence Platform (the chat-based analytics web app built on the Semantic Layer), described in TIP WebApp. It is not the "Tlife InstaBug prod" Jira project, which has a similar name.
+
+"Performance Testing Tools – CustomerInfo Management" isn't a tool. It's a short page of links in the CustomerInfo Management (CIM) space: Performance Testing Tools. It only covers how to get LRE access.
+
+Labels used below: ✅ Confirmed means the source page says it. ⚠️ Unverified means no documentation covers it. 🔎 Inference means my reasoning from the documents, which you should check with the owning team.
+
+1. Existing PerfUsers: availability and ownership
+Question
+
+Finding
+
+Is there a list or pool of production PerfUsers?
+
+⚠️ None found in TIP, Semantic Layer, LRE, IDM or CIM documentation.
+
+Where is it kept, and who owns it?
+
+⚠️ Not documented.
+
+How do I request access?
+
+⚠️ Not documented.
+
+Closest lead
+
+✅ The Semantic Layer team has already started performance testing the TIP web app: ESL-1346, ESL-1823 and ESL-2484. All three are assigned to Michael Johnson and say the work was handed to the "plab team". None of them say how the test users were obtained.
+
+2. What IDM can and can't do
+Purpose: ✅ The IDM Test Data Management (TDM) tool lets test teams create their own test identities: Workday, Fieldglass and GSM Test (Magenta AD) users. SailPoint then provisions them into Active Directory and Azure AD (Entra ID). Source: IDM Test Data Management Tool.
+
+Production or non-production only:
+
+✅ The documented tool URLs exist only for non-production environments: QLAB01/02/03/06/07 and PLAB01.
+
+✅ Passwords are reset in the "Non Production" section of the OLIO tool, against the test domain GSMTEST.ORG.
+
+✅ The Process Creating New Users via IDM User Utility Tool page calls it the "IDM NPE User Creation Tool".
+
+⚠️ Whether IDM can create production PerfUsers remains unverified. No page confirms or rules it out. Every documented path is non-production, which matches what you heard about Anderson's access.
+
+Step-by-step guide: ✅ Yes, for non-production only, on the IDM Test Data Management Tool page:
+
+Create the user using the URL for your environment.
+
+Retrieve the Personnel Number under the Provisioning Status tab.
+
+Confirm the user exists in AD (allow about 2 hours for SailPoint).
+
+Reset the password in OLIO.
+
+The official guide is the IDM SharePoint page.
+
+Bulk creation: ✅ Supported in non-production only. You upload an Excel template of up to 50 users per batch, with or without extension attributes, and accounts are valid for 6 months.
+
+Rules that apply to you (same page):
+
+IDM does not supply test data. The test team provides valid attributes.
+
+Test accounts and passwords are owned and managed by the test team, not IDM.
+
+Support requests need a Jira ticket: project "Operational Excellence", R2D2 team "IDM-NPE-SUPPORT", component "IDM - NPE Support". The page says IDM doesn't respond to email or Teams. Problems with the tool itself go to ServiceNow, assigned to "ISAM Identity Security".
+
+Anderson Dorvil's documented role: ✅ He is named as the IDM contact only in non-production contexts:
+
+IDM Sailpoint Login Creation Updated
+
+Expert Assist / Atlas IDs for QLABs
+
+Test - Atlas NPE, which includes syncing new users to the iHub database
+
+If IDM can't create production users: ⚠️ No alternative is documented. 🔎 The likely owner is IAM / ISAM Identity Security, through ServiceNow/Compass.
+
+🔎 A likely blocker:
+
+TIP checks each user's access to semantic models through Fabric. Access comes from the TMobileUSA Entra ID tenant, Provisionator security groups and row-level security.
+
+Users created in GSMTEST.ORG probably won't exist in that production tenant, so they probably can't sign in to production TIP.
+
+Sources: Enterprise Semantic Layer (Semantic) Overview and TIP WebApp.
+
+3. The CustomerInfo Management page
+Question
+
+Finding
+
+Purpose
+
+✅ It links to LRE documentation, the Set Up for New User page, and the "LRES - General Help" and "LRES - Enable Execution" request forms.
+
+Can it create, retrieve or manage PerfUsers?
+
+✅ No. It has no user-provisioning features.
+
+Permissions needed
+
+Only LRE access (see section 7).
+
+Steps
+
+Follow the links to LRE onboarding.
+
+4. Production user provisioning
+Question
+
+Finding
+
+Official process for dedicated production test accounts
+
+⚠️ Not documented anywhere I can access.
+
+Responsible team
+
+⚠️ Unverified. 🔎 Most likely IAM / ISAM Identity Security, with approval from the TIP/ESL application owners and the domain teams that own model access.
+
+Approvals and request forms
+
+✅ Only for real users: Semantic access goes through the Provisionator access package, then the security group for each model, then the TIP access group (ESL Overview). 🔎 Each PerfUser would probably need the same groups.
+
+Bulk creation in production
+
+⚠️ Not documented.
+
+Precedent
+
+TDR-38107 asked for "test accounts for Prod" through the Data Request (TDR) project. It was cancelled, and TDR handles customer data (accounts, SIMs), not employee identities. It's not a working path.
+
+5. Do you need an ADM account?
+✅ An ADM account is a privileged account you request through Compass – Request an Elevated Account. It needs manager approval, a TESS password reset and security-key MFA. The page says its purpose is signing in to the Azure Portal instead of using your NTID. Source: ADM Account Creation.
+
+Required for IDM, LRE or the CIM page? ✅ No documentation lists it as a requirement. LRE sign-in uses your NTID through SSO.
+
+Does it give you PerfUsers? 🔎 No. It's your personal privileged identity, not a load-test user, and nothing says it can create users.
+
+Other roles needed:
+
+LRE: access to the right domain and project, plus a separate execution permission.
+
+TIP: Provisionator, model and TIP security groups.
+
+6. Previous performance testing
+Item
+
+Finding
+
+Earlier TIP / Semantic Layer tests
+
+✅ ESL-1346, then ESL-1823, then ESL-2484, all Done. They cover a Supply Chain baseline, a ramp to 1,000 concurrent users and a multi-model test, run with the plab team.
+
+Known problem
+
+✅ An ESL-1346 comment says the work was "plagued with firewall issues".
+
+Reusable material
+
+✅ ESL-1346 has the full workload model: 4 tiers from 50 to 5,000 virtual users, spikes up to 25,000, and success targets (P95 under 5 s, P99 under 10 s). ESL-2484 has 3 image attachments, probably results. Domain test questions are in a SharePoint workbook (owner named as Brittney).
+
+Who supplied the user accounts?
+
+⚠️ Not recorded.
+
+Tooling note
+
+✅ ESL-1346 recommends k6 or Locust, not LRE, because they handle SSE streaming responses well. Check that LRE is the agreed tool.
+
+7. Using PerfUsers in LRE
+Access steps ✅ (sources: Load Runner Execution [LRE] and VUGen, Performance Testing with Load Runner, FAQ - LRE/LRC):
+
+Submit LRES - General Help / New User Access. Raise separate tickets for non-prod and prod. The CDM example uses projects xECM and xECM_PROD in domain DEVOPS. ⚠️ Those are that team's projects; confirm which LRE project TIP uses.
+
+In My Apps, go to Add apps → Request new apps → LoadRunner Enterprise.
+
+Submit LRES - Enable Execution. One page says this lasts a week, another says it's a daily window.
+
+On a Mac, request [MDC access] (https://myaccess.microsoft.com/@TMobileUSA.onmicrosoft.com#/access-packages/e37fd08c-c3c1-4d5e-93f2-9102de4996c3), then install VuGen and Analysis 26.1.03 from Software Center (Set Up for New User).
+
+Where test users are stored:
+
+✅ T-Mobile's LRE supports VTS (Virtual Table Server) tables, and the LRE FAQ shows how scripts connect to them.
+
+✅ VuGen can store scripts in GitLab.
+
+⚠️ CSV/DAT parameter files are standard LoadRunner practice, but no TIP-specific setup is documented.
+
+Without LRE portal access: 🔎 You may be able to see scripts and parameter files if they're in GitLab. VTS tables and project assets need LRE project membership.
+
+Permissions to see existing scripts: ✅ Signing in isn't enough. You need membership of the right domain and project, granted by the project administrator. "Create Test" and execution rights are separate (FAQ).
+
+Platform fit:
+
+✅ LRE is meant for non-production environments and production retail/care apps. Avoid tests of 40,000 or more users on LRE because of port exhaustion.
+
+✅ LoadRunner Cloud (LRC) is meant for large production tests of Digital apps.
+
+🔎 TIP runs on Azure App Service, so make sure the firewall rules are in place first (Firewall Requirements).
+
+8. Recommended action plan
+Recommended approach: Don't rely on the non-production IDM tool. Ask the ESL/TIP owners and IAM for dedicated test identities in the production tenant, with the Semantic security groups assigned. Get LRE access at the same time.
+
+Things you can do now, without LRE access:
+
+Ask Michael Johnson (assignee of ESL-1346/1823/2484) how the virtual users signed in, which plab team ran the tests, where the scripts and results are, and how the firewall issues were fixed.
+
+Raise an intake in the DnI for ESL Teams channel using the Intake Template. Ask whether the test should target PPS or production, and how many users with which model groups are needed. ✅ The ESL Overview says all ESL environments count as production data for SOX purposes, so PPS may need production identities too.
+
+Open an IDM Jira ticket (Operational Excellence / IDM-NPE-SUPPORT) asking: "Can IDM create test identities in the production TMobileUSA Entra tenant? If not, who can?" This also gets you a written answer from Anderson's team.
+
+Raise both LRE access tickets (non-prod and prod), the My Apps request, and MDC access if you're on a Mac.
+
+Ask lre-admin@t-mobile.com or the Platform Support channel which LRE project holds TIP/Semantic scripts, who the project admin is, and whether VTS tables exist.
+
+Search GitLab for VuGen, k6 or Locust scripts from the earlier tests.
+
+After that:
+
+If IDM can't do it, raise a ServiceNow/Compass request to IAM / ISAM Identity Security for dedicated production test accounts. Include the user count, groups, how long you need them, and who owns them. ⚠️ The exact catalog item isn't documented.
+
+Get each PerfUser the Provisionator, model and TIP security groups, with approval from the domain model owners.
+
+Settle the sign-in approach. Production Entra accounts need security-key MFA, so scripted SSO logins may not work. 🔎 Ask the TIP team whether there's a token or service-principal path for load testing.
+
+Store the credentials in VTS or a secured parameter source, never in scripts or chat. IDM says credentials must not be shared over Teams or email.
+
+Request the execution window and run. Start with Tier 1 (50 virtual users) from ESL-1346.
+
+Known limitations:
+
+No documented way to create production PerfUsers.
+
+IDM is confirmed non-production only.
+
+Firewall problems already hit earlier tests.
+
+MFA may block scripted logins.
+
+The LRE project for TIP is unknown.
+
+The agreed tool may be k6/Locust rather than LRE.
+
+Contacts
+Area
+
+Contact
+
+Source
+
+Earlier Semantic Layer performance tests
+
+Michael Johnson
+
+ESL-1346 / 1823 / 2484
+
+TIP web app
+
+Chima Ewuzie, Hemeshwar Konduru, John Gabriel (you're also listed)
+
+Points of Contact
+
+Fabric
+
+Goutham Penumatsa
+
+same page
+
+Semantic program and Microsoft engagement
+
+Jeannine Morris, Rijuta Das, Vanessa Payne
+
+same page
+
+Supply Chain model (test baseline)
+
+Srinivas Mandu, Rajesh Palnati
+
+same page
+
+IDM non-production
+
+Anderson Dorvil, IDM-NPE-Support@T-Mobile.com, Jira IDM-NPE-SUPPORT
+
+IDM pages above
+
+IDM tool issues
+
+ServiceNow, assigned to ISAM Identity Security
+
+IDM TDM Tool
+
+LRE platform
+
+lre-admin@t-mobile.com, Platform Support channel
+
+LRE FAQ
+
+MDC
+
+Abdul Sattar, Sreenivasalu Gooduru, Samba Siva Rao (copy your manager)
+
+LRE and VUGen
+
+Still unverified
+These need answers from people:
+
+Whether a production PerfUser pool exists and who owns it.
+
+Whether IDM can create identities in the production tenant.
+
+The official Compass/ServiceNow request for production test accounts, and whether bulk creation is supported.
+
+How the earlier ESL tests signed in their virtual users.
+
+Which LRE domain and project holds TIP's scripts.
+
+
+Sources
+Uses AI. Verify results.﻿
