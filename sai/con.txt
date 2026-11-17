@@ -1,0 +1,14 @@
+Hi Team,
+
+I’m investigating how to obtain the PerfUsers list for TIP application load testing using LRE.
+
+I have access to the Semantic_COE_TIP project and checked the existing scripts and parameter files. I found sample user data, but couldn’t identify the actual TIP PerfUsers list.
+
+Could you please confirm:
+
+1. Do we already have dedicated performance-testing users for TIP?
+2. Which team maintains these accounts?
+3. Can we reuse an existing approved user pool, or do we need to request new test accounts?
+4. Is there an approved location or process for accessing the user list?
+
+Thanks!
