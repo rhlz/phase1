@@ -1,84 +1,187 @@
-Skip to:
-Top Bar
-Sidebar
-Main Content
 
-
-
-Search
-
-Create
-
-Ask Rovo
-
-6
+Has context menu
+Chat
 
 
 
 
-Back to top
-Search by title
-Updated Oct 14
-Amol Vitthal Raut
-Edit
+Unread
+Channels
+Chats
 
-Share
+Unread messageLast messageGroup chatMeeting chatChatPersonal at mentionEveryone at mentionImportantUrgentDraftDraftMutedMeeting in progressMeet now in progressYou can't send messages because you are not a member of the chat.You cannot send messages to this botPrivateSharedHas context menuChannel at mentionTeam at mentionPersonal at mentionUnreadUnreadMeeting in progressUnreadChannelTeamHas pinned messagesSee moreCommunityTemporarily shownHas context menuBadged chatBadged chats
+Has context menu
+
+Das, Rijuta
+Dorvil, Anderson
++5
 
 
-Performance Testing Tools
+Chat
 
-
-
-By Nishant Singh
-
-Listen
-
-10
-
-Add a reaction
-Tools used for performance testing like LoadRunner Enterprise: https://lre.t-mobile.com/Loadtest/pcx/
-
-LoadRunner Enterprise
-LoadRunner Enterprise
-LoadRunner Enterprise (LRE) is T-Mobile's enterprise-grade performance testing platform for creating, scheduling, and running load tests at scale. It supports script creation with VuGen, test execution with distributed load generators, and results analysis.
-
-Key resources:
-
-LoadRunner Enterprise - Main Documentation
-
-Getting Started with LRE
-
-How to get access:
-
-Set Up for New User — includes creating your LRE account and installing required software (VuGen, Analysis)
-
-Raise an LRE support ticket here: LRES - General Help
-
-For execution permission when your user is already created, submit the LRES - Enable Execution request. This form is required for users to request a daily window to run performance test(s).
-
-Related content
-
-Performance Testing
-Arunraj Singaram
-Performance Engineering Platform
-Jayalakshmi Velchuru
-Performance Testing with Load Runner
-Akhil Ravindran
-PERFORMANCE ENGINEERING PLATFORM CUSTOMER FEEDBACK
-Jayalakshmi Velchuru
-2/25/26 Speed Test Diagnostics load test procedure
-Peter Sali
-Performance Engineering Q1 2026 BRP
-Jayalakshmi Velchuru
+Shared
++2
+Has context menu
 
 
 
+7
 
 
 
-Add a comment
+Message List
+Begin quote, Gonzalez, Francisco, 11/3/2026... by Das, Rijuta
+Das, Rijuta
+11/3 7:32 AM
 
-Add labels
+Gonzalez, Francisco (Contractor)
+11/3/2026 4:55 AM
+I wanted to confirm if we're good to close the PE intake for semantic layer?
+Hi Gonzalez, Francisco - would like to understand who can now create the perf users
 
-Add a reaction
+Hello Das, Rijuta , you could check with  ... by Gonzalez, Francisco (Contractor)
+Gonzalez, Francisco (Contractor)
+11/3 7:34 AM
+
+Hello Das, Rijuta, you could check with Sridhara, Sudarshan, he'd generally be able to provide this information
+
+Guerrero, Cesar , do you have any info on t... by Gonzalez, Francisco (Contractor)
+Gonzalez, Francisco (Contractor)
+11/3 7:34 AM
+
+Guerrero, Cesar, do you have any info on this?
+
+Das, Rijuta
+11/3/2026 7:32 AM
+Hi Gonzalez, Francisco - would like to understand who can now create the perf users
+My guess was Dorvil Anderson, but I don't t... by Gonzalez, Francisco (Contractor)
+Gonzalez, Francisco (Contractor)
+11/3 7:35 AM
+
+My guess was Dorvil Anderson, but I don't think he was able to provide that info
+
+that is something we can not share or give ... by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+11/3 7:35 AM
+
+that is something we can not share or give KT
+
+for that the team needs to reach out to And... by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+11/3 7:35 AM
+
+for that the team needs to reach out to Andreson 
+
+he has the guides the team can follow  by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+11/3 7:35 AM
+
+he has the guides the team can follow 
+
+ok .. so wl reach out to Dorvil Anderson an... by Das, Rijuta
+Das, Rijuta
+11/3 7:36 AM
+
+ok .. so wl reach out to Dorvil Anderson and Sridhara, Sudarshan 
+
+thank u by Das, Rijuta
+Das, Rijuta
+11/3 7:36 AM
+
+thank u
+
+Sridhara, Sudarshan is from my team by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+11/3 7:36 AM
+
+Sridhara, Sudarshan is from my team
+
+oh ok  by Das, Rijuta
+Das, Rijuta
+11/3 7:36 AM
+
+oh ok 
+
+Dorvil Anderson - it is then by Das, Rijuta
+Das, Rijuta
+11/3 7:36 AM
+
+Dorvil Anderson - it is then
+
+can i add him in this group ? by Das, Rijuta
+Das, Rijuta
+11/3 7:37 AM
+
+can i add him in this group ?
+
+Das, Rijuta added Dorvil, Anderson to the chat and shared all chat history.
+Francisco, Sid and myself, we are from the ... by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+11/3 7:37 AM
+
+Francisco, Sid and myself, we are from the same team, and Anderson if from IDm the main POC for user creation 
+
+We had a conversation with Dorvil Anderson,... by Konduru, Hemeshwar (Contractor)
+Konduru, Hemeshwar (Contractor)
+11/3 7:38 AM
+
+We had a conversation with Dorvil Anderson, he mentioned he has access to test space perf users which is not gonna work for our usecase
+
+Hello Konduru, Hemeshwar / Das, Rijuta , I... by Gonzalez, Francisco (Contractor)
+Gonzalez, Francisco (Contractor)
+11/5 11:16 AM
+
+Hello Konduru, Hemeshwar/Das, Rijuta, I just wanted to inform that the perf intake is being closed
+
+Hi  Everyone  , I'm still blocked on gettin... by Raut, Amol Vitthal (Contractor)
+9:29 AM
+Raut, Amol Vitthal (Contractor)
+
+Hi Everyone ,
+
+I'm still blocked on getting the perfusers list. Do you think we could create a test user account using the IDM utility tool as a workaround or using some process or steps?
+
+I don't mean to put anyone on the spot—I'm just trying to figure out if there's a way to get some help and move forward on this.
+
+I'd really appreciate any guidance or suggestions. Thanks!
+
+Last read
+better if you use the IDM tools that is the... by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+9:34 AM
+
+better if you use the IDM tools that is the right approach 
+
+Guerrero, Cesar (Contractor)  by using IDM ... by Konduru, Hemeshwar (Contractor)
+Konduru, Hemeshwar (Contractor)
+9:36 AM
+
+Guerrero, Cesar (Contractor) by using IDM we can generate prod perf users? Anderson mentioned his access is limited to Test user accounts
+
+for that I am not completely sure  by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+9:36 AM
+
+for that I am not completely sure 
+
+Link https://t-mobile.atlassian.net/wiki/sp... by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+9:36 AM
+
+https://t-mobile.atlassian.net/wiki/spaces/ESDMLaaS/pages/181749180/ADM+Account+Creation
+
+I found this, see if this can help by Guerrero, Cesar (Contractor)
+Guerrero, Cesar (Contractor)
+9:36 AM
+
+I found this, see if this can help
+
+Raut, Amol Vitthal (Contractor)  please che... by Konduru, Hemeshwar (Contractor)
+Konduru, Hemeshwar (Contractor)
+9:39 AM
+
+Raut, Amol Vitthal (Contractor) please check this link - Performance Testing Tools - CustomerInfo Management - Confluence if something is not clear ping the person who created this page on teams
+
+has context menu
+
 
