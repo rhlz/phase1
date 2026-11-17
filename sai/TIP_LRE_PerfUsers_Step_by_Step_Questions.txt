@@ -1,0 +1,476 @@
+TIP / SEMANTIC LAYER — LRE PERFUSERS R&D
+STEP-BY-STEP QUESTIONS, WHERE TO ASK, AND COPY-PASTE MESSAGES
+Prepared: 18 November 2026
+
+======================================================================
+GOAL
+======================================================================
+Find an existing APPROVED list/pool of TIP performance-testing accounts
+(PerfUsers), or identify the authorized team and exact process for
+provisioning new accounts for TIP web-application load tests.
+
+IMPORTANT DISTINCTIONS
+- LRE Vusers = simulated load-test sessions; TIP PerfUsers = application
+  identities used by those sessions, if the test requires user login.
+- Confirm whether the target is PRODUCTION, PPS, PLAB, or another
+  environment. "Production-like" is not necessarily "production".
+- The previously reviewed IDM documentation describes NON-PRODUCTION
+  account creation. Production support has NOT been confirmed.
+- ADM elevated Azure access does NOT by itself mean LRE access or
+  authorization to create production PerfUsers.
+- Do NOT ask anyone to paste passwords, temporary codes, tokens, or a
+  populated credential file into Teams, Jira, email, or Rovo.
+- Ask for an approved account INVENTORY (non-secret IDs), its OWNER,
+  access approvals, and a SECURE credential delivery/injection method.
+- Do NOT run production load tests or create production identities
+  without the documented approvals.
+
+Known information reported by colleagues / Rovo (verify in source systems):
+- Francisco gave an LRE KT; an action scenario was reportedly set up.
+- Relevant Jira references: ESL-2966, ESL-4155, ESL-1346,
+  ESL-1823, ESL-2484.
+- Hemeshwar Konduru = TIP developer / technical contact.
+- Francisco Gonzalez = LRE KT / testing contact.
+- Michael Johnson = associated with earlier ESL load-test tickets.
+- Anderson Dorvil = IDM user-creation contact, apparently NPE-limited.
+- Rijuta Das = coordination/escalation lead.
+- Rovo did not find a documented production PerfUsers list or a
+  confirmed production-user provisioning path.
+
+======================================================================
+STEP 1 — CHECK JIRA FIRST (NO MESSAGE REQUIRED YET)
+======================================================================
+WHERE:
+Jira -> Search issues -> ESL-2966, ESL-4155, ESL-1346
+Then review linked tickets ESL-1823 and ESL-2484 if relevant.
+
+ESL-1346: https://t-mobile.atlassian.net/browse/ESL-1346
+For ESL-2966 and ESL-4155, search by issue key in Jira.
+
+CHECK EACH TICKET FOR:
+[ ] What app/module is being load-tested? TIP / Semantic Layer?
+[ ] Environment: Production, PPS, PLAB, or other?
+[ ] Planned load: Vusers, peak concurrency, tests, duration?
+[ ] LRE, k6, Locust, or another tool?
+[ ] Who created the scenario? Who owns the test execution?
+[ ] Login / SSO / token flow described?
+[ ] Any mention of PerfUsers, test accounts, test-data sources?
+[ ] Scripts, GitLab locations, VTS, CSV/DAT parameter files?
+[ ] Test owner, account owner, ticket assignee, PLAB team POC?
+[ ] Existing access or identity provisioning request linked?
+[ ] Whether approval exists for load against production.
+
+IF TICKETS DON'T ANSWER THE ABOVE, USE THIS ROVO PROMPT:
+
+--- COPY INTO CONFLUENCE -> ASK ROVO ---
+Find and summarize ESL-2966, ESL-4155, ESL-1346, ESL-1823 and
+ESL-2484, including linked Confluence pages and attachments accessible
+to me, as they relate to TIP / Semantic Layer load testing.
+
+For EACH issue, identify:
+1. Purpose and target environment (Production / PPS / PLAB).
+2. Load-testing tool and test/scenario owner.
+3. Whether users must log in; authentication mechanism used.
+4. Number of distinct test identities needed vs number of Vusers.
+5. Whether an existing PerfUsers pool or provisioning request is named.
+6. Where scripts, parameter files, or test-data references are held.
+7. People/teams who executed past tests and managed test identities.
+8. Any production-test approvals, restrictions, or firewall blockers.
+
+For every claim give a direct Jira/Confluence source link. Clearly
+mark NOT FOUND or NOT VERIFIED where records do not confirm details.
+Do not reveal real credentials, secrets, tokens or user-data exports.
+--- END ROVO PROMPT ---
+
+======================================================================
+STEP 2 — ASK FRANCISCO ABOUT THE LRE KT AND SCENARIO
+======================================================================
+WHERE: Microsoft Teams -> Search -> Francisco Gonzalez -> Direct message
+GOAL: Learn what the scenario needs and who provided users previously.
+
+--- COPY-PASTE TEAMS MESSAGE ---
+Hi Francisco,
+
+I'm working on the R&D for obtaining PerfUsers for TIP / Semantic
+Layer load testing. I saw the update that LRE KT was conducted and an
+action scenario was configured.
+
+Could you help me clarify a few points?
+
+1. Which TIP module, target environment, and LRE domain/project is the
+   scenario configured for?
+2. Does the scenario actually require a distinct application account
+   for every Vuser? How many test identities are needed?
+3. What authentication flow is used (interactive SSO, token, existing
+   session, or another approved method)?
+4. Were any PerfUsers used during KT, an earlier smoke test, or a prior
+   performance test? If so, who owns the account pool?
+5. Where are the scripts and non-secret test-data configuration stored
+   (LRE, GitLab, VTS, CSV/DAT reference, etc.)?
+6. Who is the correct POC for requesting approved test accounts or
+   creating new ones if the pool is unavailable?
+7. Are there Jira tickets or test-run details I should refer to?
+
+I only need the account source, owner, access process and secure
+credential setup procedure, not passwords over Teams.
+
+Thanks!
+--- END MESSAGE ---
+
+RECORD ANSWERS:
+Environment: __________  LRE project: __________
+Required unique accounts: __________
+Authentication: __________  Scripts location: __________
+Account owner / POC: __________  Existing pool? __________
+
+======================================================================
+STEP 3 — ASK HEMESH ABOUT TIP ACCOUNT REQUIREMENTS
+======================================================================
+WHERE: Microsoft Teams -> Search -> Hemeshwar Konduru -> Direct message
+GOAL: Define the user requirements and uncover an existing source.
+
+--- COPY-PASTE TEAMS MESSAGE ---
+Hi Hemesh,
+
+I'm investigating how to obtain or create the PerfUsers needed for
+load testing the TIP web application. I've reviewed the IDM/LRE leads,
+but the source of approved production test identities is still unclear.
+
+Could you please help confirm:
+
+1. Does this specific TIP use case require accounts in Production or
+   PPS/PLAB? What is the exact target environment?
+2. Do we already have an approved pool of TIP PerfUsers? If yes, which
+   team owns it and how should we request access?
+3. Which TIP roles, Provisionator access packages, semantic-model
+   security groups, and data permissions must each test user have?
+4. How many distinct user accounts are needed, and can sessions share
+   accounts, or must they be unique?
+5. Does TIP support an approved non-interactive test authentication
+   flow? Does MFA/SSO affect scripted login?
+6. If accounts need to be newly provisioned, who approves account
+   creation and model access? Is there an existing request template?
+7. Do you know who provided the accounts for earlier Semantic Layer
+   load tests (for example ESL-1346/1823/2484)?
+
+Any relevant document, Jira ticket, or POC would help.
+
+Thanks!
+--- END MESSAGE ---
+
+RECORD ANSWERS:
+Target environment: __________  TIP model/roles: __________
+Required groups: __________  Distinct accounts: __________
+SSO/MFA design: __________  Approver: __________
+
+======================================================================
+STEP 4 — ASK MICHAEL ABOUT EARLIER LOAD TESTS
+======================================================================
+WHERE: Microsoft Teams -> Search -> Michael Johnson -> Direct message
+GOAL: Reuse the proven, approved process instead of reinventing it.
+
+--- COPY-PASTE TEAMS MESSAGE ---
+Hi Michael,
+
+I'm researching how to obtain PerfUsers for TIP / Semantic Layer load
+testing. Rovo pointed me to your earlier performance-testing tickets
+ESL-1346, ESL-1823, and ESL-2484.
+
+Could you please help with a few historical details?
+
+1. Which team actually executed those tests, including the PLAB team
+   contact if applicable?
+2. What environment was targeted, and did the tests use real
+   production identities, approved synthetic production accounts, or
+   non-production test identities?
+3. How did the scripts authenticate users? Were passwords needed or
+   was another mechanism used?
+4. Was there a maintained PerfUsers inventory/pool? Which team owned it
+   and is it still approved for reuse?
+5. Where are the scripts and test-data configuration kept?
+6. Was user provisioning tracked in Jira, ServiceNow, Compass, IDM,
+   or another system?
+7. What access, firewall, MFA, or test execution issues should we
+   avoid this time?
+
+I am not asking for credentials in chat—just the owner, process,
+references, and secure access method.
+
+Thanks!
+--- END MESSAGE ---
+
+RECORD ANSWERS:
+Previous test owners: __________
+User source: __________  Reusable? __________
+Request reference: __________  Storage/injection approach: __________
+
+======================================================================
+STEP 5 — CHECK THE OFFICIAL DOCUMENTATION / ROVO
+======================================================================
+WHERE: Confluence -> open these shared pages; use Ask Rovo for gaps.
+
+1. Set Up for New User:
+https://tmobileusa.atlassian.net/wiki/pages/viewpage.action?pageId=195233854
+2. Performance Testing with Load Runner:
+https://tmobileusa.atlassian.net/wiki/pages/viewpage.action?pageId=55654829
+3. LRE REST API Example:
+https://tmobileusa.atlassian.net/wiki/pages/viewpage.action?pageId=229673367
+4. LRE KT Sessions:
+https://tmobileusa.atlassian.net/wiki/pages/viewpage.action?pageId=180201009
+5. Performance Testing Tools - CustomerInfo Management:
+Search by exact page title in Confluence.
+6. IDM Test Data Management Tool / Process Creating New Users via IDM
+   User Utility Tool: search these titles in Confluence.
+7. ADM Account Creation (for elevated Azure access, not confirmed
+   relevant to LRE or production PerfUser provisioning):
+https://t-mobile.atlassian.net/wiki/spaces/ESDMLaaS/pages/181749180/ADM+Account+Creation
+
+--- COPY INTO ASK ROVO ---
+Search these pages and related T-Mobile docs: "Set Up for New User",
+"Performance Testing with Load Runner", "LRE KT Sessions",
+"Performance Testing Tools", "IDM Test Data Management Tool",
+"Process Creating New Users via IDM User Utility Tool", and TIP
+Semantic Layer documentation.
+
+Please answer with page title + direct URL for each conclusion:
+1. Exact steps for new LRE user/project access (production and stage).
+2. Where TIP scripts and user parameterization may be configured.
+3. Whether there is a documented TIP PerfUsers file, VTS table,
+   directory, repository or secure provisioning procedure.
+4. Whether IDM Test Data Management supports PROD, or only NPE.
+5. The official owner and request route for production test accounts.
+6. Any required TIP access groups, approvals, identity lifetime,
+   password/MFA requirements, or test-execution conditions.
+7. Whether an ADM account is required for any specific step.
+8. Whether a more directly applicable prior TIP load-test runbook exists.
+
+Do not infer that production identities can be created with NPE tools.
+Mark unsupported conclusions as UNVERIFIED. Do not disclose secrets.
+--- END ROVO PROMPT ---
+
+======================================================================
+STEP 6 — OPEN AN IDM Jira CLARIFICATION REQUEST
+======================================================================
+WHERE: Jira -> Create -> Operational Excellence project
+Route to R2D2 team "IDM-NPE-SUPPORT" / component "IDM - NPE Support"
+if those routing fields are available (as reported in Rovo research).
+This is a clarification about CAPABILITY/OWNERSHIP, not an instruction
+to create production accounts using an NPE utility.
+
+--- COPY-PASTE JIRA SUMMARY ---
+TIP / Semantic Layer - confirm approved production PerfUser provisioning owner and process
+--- END SUMMARY ---
+
+--- COPY-PASTE JIRA DESCRIPTION ---
+We are identifying an approved source of performance-testing
+identities (PerfUsers) for TIP / Semantic Layer load testing.
+
+Existing IDM TDM documentation describes test-account provisioning in
+non-production environments (QLAB / PLAB). Our test environment and
+production identity requirement need confirmation.
+
+Please clarify:
+1. Can the IDM utility provision approved TIP test identities in the
+   production TMobileUSA Entra ID tenant, or is it strictly NPE?
+2. If not, which team owns production synthetic/test identity
+   provisioning, and what is the official intake route (Jira,
+   ServiceNow, Compass, or other)?
+3. Is an existing authorized production PerfUser pool available?
+4. If new accounts are supported, are bulk requests allowed? What
+   account-count limits, approvals, expiry/cleanup rules and expected
+   attributes must be supplied by the requesting team?
+5. Who grants TIP application access, semantic-model/Provisionator
+   group memberships, and any necessary authentication exceptions?
+6. Can you link the current internal procedure and responsible POC?
+
+We request guidance/ownership only at this stage; do not provision
+accounts until the target environment and approvals are confirmed.
+No passwords, tokens or credentials are included in this ticket.
+
+Related work: ESL-2966, ESL-4155, ESL-1346 (verify relevance).
+Business reason: unblock approved TIP load-testing setup.
+--- END DESCRIPTION ---
+
+SAVE: ticket number, owning team, documented response.
+
+======================================================================
+STEP 7 — REQUEST LRE PORTAL / TIP PROJECT ACCESS
+======================================================================
+WHERE A: My Apps -> Add Apps -> Request New Apps -> LoadRunner Enterprise
+WHERE B: LRE support ticket (LRES - General Help / New User Access)
+WHERE C: email to lre-admin@t-mobile.com if your organization uses it
+for LRE platform guidance (follow the official ticket route for access).
+
+Access issues already experienced: Access Denied / Unauthorized on
+https://lre.t-mobile.com/homepage/
+https://lre-stg.t-mobile.com/homepage/
+
+--- COPY-PASTE LRE SUPPORT MESSAGE ---
+Subject: LRE Access Denied - TIP / Semantic Layer project and scripts
+
+Hi LRE Support Team,
+
+I'm investigating TIP / Semantic Layer performance testing and need to
+view existing scripts, test configurations, and their non-secret test-
+data source references. Both LRE Production and Stage portals currently
+show Access Denied / Unauthorized for my account.
+
+Could you please confirm:
+1. The required LoadRunner application entitlement and whether my
+   NTID has it.
+2. Which LRE domain/project contains TIP / Semantic Layer tests, and
+   which project administrator can grant read access.
+3. Which LRES access request(s) should be raised for Production and
+   Stage, and whether each requires a separate request.
+4. Whether there are existing TIP scenarios, script parameter files,
+   or VTS tables to investigate after access is approved.
+5. Whether execution permission is separate from read/view access.
+
+I am requesting read/view access first. I can provide NTID, domain/
+project (once confirmed), screenshots and error timestamp through the
+approved support ticket; I will not include passwords/tokens.
+
+Thanks!
+--- END MESSAGE ---
+
+RECORD: application entitlement request ID: __________
+LRE support ticket: __________  TIP domain/project: __________
+Project admin: __________  Access status: __________
+
+======================================================================
+STEP 8 — IF NO EXISTING POOL EXISTS, ASK IAM/IDENTITY OWNER
+======================================================================
+WHERE: Official IAM / ISAM Identity Security / ServiceNow or Compass
+request route CONFIRMED by IDM/PLAB/TIP owner. Do not guess a catalog
+item or request direct production account creation without approvals.
+
+--- COPY-PASTE REQUEST TEXT (AFTER ROUTE IS CONFIRMED) ---
+Subject: Request approved process for dedicated TIP performance-test identities
+
+Hi Identity / IAM Team,
+
+Our team is preparing approved TIP / Semantic Layer application load
+tests and needs guidance on dedicated synthetic/test identities.
+
+Target environment: [PROD / PPS / other - confirm]
+TIP models/roles: [confirm with application owner]
+Number of distinct accounts: [confirm with test owner]
+Requested validity period: [confirm]
+Project / business owner: [confirm]
+Relevant issues: [ESL-2966 / ESL-4155 / other]
+
+Please confirm:
+1. Is an existing approved account pool available for this use case?
+2. If not, is production test-identity creation permitted and who can
+   approve it?
+3. What intake request, approvals, per-user attributes and security
+   groups are required? Does bulk provisioning exist?
+4. Who provisions TIP/semantic-model access after identity creation?
+5. What is the approved authentication approach for automated tests
+   with SSO/MFA controls?
+6. How must the account inventory and credentials be delivered/stored
+   securely for load tests, and who owns rotation and cleanup?
+
+Please share the official procedure. We are requesting guidance and
+approval, not asking anyone to send passwords in the ticket.
+
+Thanks!
+--- END MESSAGE ---
+
+======================================================================
+STEP 9 — UPDATE RIJUTA FOR COORDINATION / ESCALATION
+======================================================================
+WHERE: Microsoft Teams -> Search -> Rijuta Das -> Direct message
+WHEN: After initial questions/tickets, or sooner if the correct owner
+has been identified and an approval or team response is blocked.
+
+--- COPY-PASTE UPDATE ---
+Hi Rijuta,
+
+Quick update on TIP / Semantic Layer PerfUsers R&D.
+
+I reviewed the available LRE/IDM documentation and the Jira references
+ESL-2966, ESL-4155 and ESL-1346. The current issue is obtaining an
+approved pool of TIP test identities or confirming the right process
+to create them. The documented IDM utility supports non-production
+user creation; production identity provisioning is not confirmed.
+
+I'm checking with Francisco about the configured scenario, Hemesh
+about TIP roles/environment, and Michael about earlier ESL tests. I'm
+also following up through the official IDM and LRE access routes.
+
+Current blocker/owner: [fill in after replies]
+Specific help needed: [e.g. introduction to production IAM owner,
+approval for provisioning, or confirmation of project ownership]
+
+Could you please help coordinate with the responsible team once that
+owner is confirmed?
+
+Thanks!
+--- END UPDATE ---
+
+======================================================================
+STEP 10 — AFTER A USER SOURCE IS IDENTIFIED, VALIDATE SAFELY
+======================================================================
+WHERE: TIP/application owner + performance engineer + identity owner.
+Ask these BEFORE putting users into the load test:
+
+1. Are these dedicated, authorized test identities and are they valid
+   in the exact target environment?
+2. Does each account have TIP application and model permissions?
+3. Are there data-access / SOX / privacy restrictions on their usage?
+4. Who owns and approves this account pool and its lifecycle?
+5. How many unique logins are supported? Any lockout/rate limits?
+6. Will MFA/SSO allow the planned approved scripted authentication?
+7. Is each account mapped to a Vuser uniquely, if required?
+8. Which approved secret management/test-data mechanism supplies
+   credentials to scripts? No hardcoded secrets.
+9. Has the test plan, target load, execution window and production
+   authorization been approved?
+10. Can we validate one account and one safe smoke-test flow first,
+    then a limited authorized multi-user trial before full load?
+
+NOTE: Do not automatically assume the number of Vusers equals the
+number of PerfUser accounts. Confirm the session/account mapping in the
+scenario. Do not work around MFA, identity controls, or test rules.
+
+======================================================================
+FINAL R&D OUTPUT — FILL THIS IN AFTER RESPONSES
+======================================================================
+1. Target TIP module: ______________________________________________
+2. Target environment (PROD / PPS / etc.): __________________________
+3. Agreed test tool (LRE / k6 / Locust): ____________________________
+4. LRE domain/project and scenario: _________________________________
+5. Required Vusers / DISTINCT accounts: ____________________________
+6. Authentication method / SSO/MFA constraints: _____________________
+7. Existing PerfUsers pool? (YES / NO / UNKNOWN): ____________________
+8. Existing pool owner and request path: ____________________________
+9. New user provisioning allowed? (YES / NO / UNKNOWN): _____________
+10. Approved provisioning team and ticket route: _____________________
+11. TIP application + semantic group approvers: ______________________
+12. Secure account inventory / credential mechanism: ________________
+13. LRE access request ID and current status: ________________________
+14. Relevant Jira references: ______________________________________
+15. Who owns the next step / what approval is blocked: _______________
+16. Decision: REUSE APPROVED POOL / PROVISION NEW ACCOUNTS / PENDING
+17. Next action and owner: _________________________________________
+
+======================================================================
+MINIMUM ORDER TO FOLLOW TODAY
+======================================================================
+1. Read ESL-2966 + ESL-4155 + ESL-1346; copy findings into tracker.
+2. Send Francisco the Step 2 Teams message.
+3. Send Hemesh the Step 3 Teams message.
+4. Send Michael the Step 4 Teams message.
+5. Run Rovo prompts and save document/source links.
+6. Submit IDM clarification ticket using Step 6 if still unconfirmed.
+7. Start/track LoadRunner access using Step 7.
+8. Ask IAM only via the route confirmed by an authorized owner.
+9. Update Rijuta with the specific unanswered question and owner.
+10. Complete the final R&D output above.
+
+SUCCESS CRITERIA:
+A documented, approved source for TIP PerfUsers OR a named production
+identity owner + official request process, with requirements,
+approvals, and a secure way to use credentials in the test scenario.
+======================================================================
