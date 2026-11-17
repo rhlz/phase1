@@ -1,187 +1,99 @@
+I am currently working on an R&D task to identify how to obtain or create production performance-testing users (PerfUsers) for the TIP application at T-Mobile, specifically for the Semantic Layer use case, where load testing will be performed using LoadRunner Enterprise (LRE).
 
-Has context menu
-Chat
+**Background:**
 
+- We need a list of production PerfUsers to perform TIP application load testing.
+- Currently, I don't have access to either the LRE Production or Stage portal (Access Denied / Unauthorized).
+- Our team suggested using IDM tools to generate performance-testing users.
+- Anderson Dorvil was identified as the main IDM point of contact for user creation.
+- However, it was mentioned that Anderson's access is limited to test-space users, which may not work for our production use case.
+- The team also shared the Confluence documents "Performance Testing Tools – CustomerInfo Management" and "ADM Account Creation."
+- We need to determine whether existing production PerfUsers can be obtained or whether new dedicated users must be provisioned.
 
+**Please search all relevant accessible Confluence documentation, including performance engineering guides, IDM documentation, TIP application documentation, Semantic Layer performance-testing records, and CustomerInfo Management guides.**
 
+I need detailed answers to the following questions:
 
-Unread
-Channels
-Chats
+**1. Existing PerfUsers**
 
-Unread messageLast messageGroup chatMeeting chatChatPersonal at mentionEveryone at mentionImportantUrgentDraftDraftMutedMeeting in progressMeet now in progressYou can't send messages because you are not a member of the chat.You cannot send messages to this botPrivateSharedHas context menuChannel at mentionTeam at mentionPersonal at mentionUnreadUnreadMeeting in progressUnreadChannelTeamHas pinned messagesSee moreCommunityTemporarily shownHas context menuBadged chatBadged chats
-Has context menu
+- Is there an existing list or pool of production PerfUsers for TIP or Semantic Layer performance testing?
+- Where is this list maintained?
+- Which team owns and manages these users?
+- What is the approved process to request access to this list?
 
-Das, Rijuta
-Dorvil, Anderson
-+5
+**2. IDM Utility and User Creation**
 
+- What is the IDM utility used for?
+- Can IDM create production performance-testing users, or only test-space/non-production users?
+- Is there an official step-by-step guide for creating users through IDM?
+- If IDM cannot create production PerfUsers, what alternative approved process exists?
 
-Chat
+**3. CustomerInfo Management Tool**
 
-Shared
-+2
-Has context menu
+- What is the purpose of the "Performance Testing Tools – CustomerInfo Management" tool?
+- Can it generate, retrieve, or manage production PerfUsers?
+- What access permissions are required?
+- What are the exact documented steps to use this tool?
 
+**4. Production User Provisioning**
 
+- What is the official process for creating dedicated production performance-testing accounts?
+- Which team is responsible: IDM, Performance Engineering, TIP, IAM, or another team?
+- Are there approval requirements, request forms, Jira tickets, or ServiceNow/Compass workflows?
+- Is bulk creation of performance-testing users supported?
 
-7
+**5. ADM Account Requirement**
 
+- Is an ADM account required to use IDM, CustomerInfo Management, or other performance-user provisioning tools?
+- Does the ADM account provide any access needed for production PerfUsers?
+- What additional roles or permissions are necessary?
 
+**6. Previous Performance Testing**
 
-Message List
-Begin quote, Gonzalez, Francisco, 11/3/2026... by Das, Rijuta
-Das, Rijuta
-11/3 7:32 AM
+- Are there previous TIP or Semantic Layer performance tests documenting how PerfUsers were obtained?
+- Which teams or individuals provided the user accounts?
+- Are there scripts, configuration guides, runbooks, or test-data provisioning instructions that can be reused?
 
-Gonzalez, Francisco (Contractor)
-11/3/2026 4:55 AM
-I wanted to confirm if we're good to close the PE intake for semantic layer?
-Hi Gonzalez, Francisco - would like to understand who can now create the perf users
+**7. LRE Integration**
 
-Hello Das, Rijuta , you could check with  ... by Gonzalez, Francisco (Contractor)
-Gonzalez, Francisco (Contractor)
-11/3 7:34 AM
+- How are PerfUsers supplied to LRE load-testing scripts?
+- Are they maintained in CSV/DAT parameter files, VTS tables, a secure repository, or another system?
+- Can the user list be obtained without direct LRE portal access?
+- What permissions are required to view existing TIP load-testing scripts?
 
-Hello Das, Rijuta, you could check with Sridhara, Sudarshan, he'd generally be able to provide this information
+**8. Recommended Next Steps**
 
-Guerrero, Cesar , do you have any info on t... by Gonzalez, Francisco (Contractor)
-Gonzalez, Francisco (Contractor)
-11/3 7:34 AM
+Based on the available documentation, provide a practical step-by-step action plan to obtain the production PerfUsers needed for TIP load testing.
 
-Guerrero, Cesar, do you have any info on this?
+Please identify:
+- The recommended approach.
+- The tools I need to access.
+- The responsible team or point of contact.
+- The relevant access request procedures.
+- The correct sequence of steps to follow.
+- Any known limitations or blockers.
+- What I can investigate immediately without LRE access.
 
-Das, Rijuta
-11/3/2026 7:32 AM
-Hi Gonzalez, Francisco - would like to understand who can now create the perf users
-My guess was Dorvil Anderson, but I don't t... by Gonzalez, Francisco (Contractor)
-Gonzalez, Francisco (Contractor)
-11/3 7:35 AM
+**Important instructions:**
 
-My guess was Dorvil Anderson, but I don't think he was able to provide that info
+For every finding, provide the exact Confluence page title and source URL.
 
-that is something we can not share or give ... by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-11/3 7:35 AM
+Prioritize official T-Mobile internal documentation over assumptions. Clearly distinguish confirmed information from unverified possibilities.
 
-that is something we can not share or give KT
+If documentation does not confirm whether production PerfUsers can be created using IDM, explicitly mention that this remains unverified.
 
-for that the team needs to reach out to And... by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-11/3 7:35 AM
+Do not expose actual user credentials, passwords, access tokens, or sensitive production account data.
 
-for that the team needs to reach out to Andreson 
+**Final expected output:**
 
-he has the guides the team can follow  by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-11/3 7:35 AM
+Provide a consolidated R&D report containing:
 
-he has the guides the team can follow 
+1. Existing PerfUsers availability and ownership.
+2. IDM and CustomerInfo Management capabilities.
+3. Confirmed production-user creation process, if documented.
+4. Required access and approvals.
+5. Relevant documentation links.
+6. Teams or contacts who can help.
+7. A prioritized action plan to unblock TIP performance testing.
 
-ok .. so wl reach out to Dorvil Anderson an... by Das, Rijuta
-Das, Rijuta
-11/3 7:36 AM
-
-ok .. so wl reach out to Dorvil Anderson and Sridhara, Sudarshan 
-
-thank u by Das, Rijuta
-Das, Rijuta
-11/3 7:36 AM
-
-thank u
-
-Sridhara, Sudarshan is from my team by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-11/3 7:36 AM
-
-Sridhara, Sudarshan is from my team
-
-oh ok  by Das, Rijuta
-Das, Rijuta
-11/3 7:36 AM
-
-oh ok 
-
-Dorvil Anderson - it is then by Das, Rijuta
-Das, Rijuta
-11/3 7:36 AM
-
-Dorvil Anderson - it is then
-
-can i add him in this group ? by Das, Rijuta
-Das, Rijuta
-11/3 7:37 AM
-
-can i add him in this group ?
-
-Das, Rijuta added Dorvil, Anderson to the chat and shared all chat history.
-Francisco, Sid and myself, we are from the ... by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-11/3 7:37 AM
-
-Francisco, Sid and myself, we are from the same team, and Anderson if from IDm the main POC for user creation 
-
-We had a conversation with Dorvil Anderson,... by Konduru, Hemeshwar (Contractor)
-Konduru, Hemeshwar (Contractor)
-11/3 7:38 AM
-
-We had a conversation with Dorvil Anderson, he mentioned he has access to test space perf users which is not gonna work for our usecase
-
-Hello Konduru, Hemeshwar / Das, Rijuta , I... by Gonzalez, Francisco (Contractor)
-Gonzalez, Francisco (Contractor)
-11/5 11:16 AM
-
-Hello Konduru, Hemeshwar/Das, Rijuta, I just wanted to inform that the perf intake is being closed
-
-Hi  Everyone  , I'm still blocked on gettin... by Raut, Amol Vitthal (Contractor)
-9:29 AM
-Raut, Amol Vitthal (Contractor)
-
-Hi Everyone ,
-
-I'm still blocked on getting the perfusers list. Do you think we could create a test user account using the IDM utility tool as a workaround or using some process or steps?
-
-I don't mean to put anyone on the spot—I'm just trying to figure out if there's a way to get some help and move forward on this.
-
-I'd really appreciate any guidance or suggestions. Thanks!
-
-Last read
-better if you use the IDM tools that is the... by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-9:34 AM
-
-better if you use the IDM tools that is the right approach 
-
-Guerrero, Cesar (Contractor)  by using IDM ... by Konduru, Hemeshwar (Contractor)
-Konduru, Hemeshwar (Contractor)
-9:36 AM
-
-Guerrero, Cesar (Contractor) by using IDM we can generate prod perf users? Anderson mentioned his access is limited to Test user accounts
-
-for that I am not completely sure  by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-9:36 AM
-
-for that I am not completely sure 
-
-Link https://t-mobile.atlassian.net/wiki/sp... by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-9:36 AM
-
-https://t-mobile.atlassian.net/wiki/spaces/ESDMLaaS/pages/181749180/ADM+Account+Creation
-
-I found this, see if this can help by Guerrero, Cesar (Contractor)
-Guerrero, Cesar (Contractor)
-9:36 AM
-
-I found this, see if this can help
-
-Raut, Amol Vitthal (Contractor)  please che... by Konduru, Hemeshwar (Contractor)
-Konduru, Hemeshwar (Contractor)
-9:39 AM
-
-Raut, Amol Vitthal (Contractor) please check this link - Performance Testing Tools - CustomerInfo Management - Confluence if something is not clear ping the person who created this page on teams
-
-has context menu
-
-
+My ultimate goal is to identify a reliable, approved method to obtain or provision production PerfUsers for TIP load testing using LRE.
